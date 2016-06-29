@@ -136,6 +136,13 @@
         "description": "Size of the Elasticsearch master nodes"
       }
     },
+    "vmMasterNodeCount": {
+      "type": "int",
+      "defaultValue": 3,
+      "metadata": {
+        "description": "Number of Elasticsearch master nodes"
+      }
+    },
     "vmSizeDataNodes": {
       "type": "string",
       "defaultValue": "Standard_D2_v2",
@@ -741,6 +748,9 @@
           },
           "vmSize": {
             "value": "[parameters('vmSizeMasterNodes')]"
+          },
+          "vmCount":{
+            "value": "[parameters('vmMasterNodeCount')]"
           },
           "subnet": {
             "value": "[variables('networkSettings').subnet.master]"
